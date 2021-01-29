@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioAdvancedTest {
     RadioAdvanced radio = new RadioAdvanced();
+
     @Test
     void CurrentNumberStation() {
         radio.setCurrentNumberStation(7);
@@ -71,30 +72,6 @@ class RadioAdvancedTest {
     void MinVolume() {
         radio.setCurrentVolume(0);
         radio.minusVolume();
-        assertEquals(0, radio.getCurrentVolume());
-    }
-
-    @Test
-    void NextNumberStationOverLast() {
-        radio.setCurrentNumberStation(11);
-        assertEquals(0, radio.getCurrentNumberStation());
-    }
-
-    @Test
-    void PrevNumberStationUnderStart() {
-        radio.setCurrentNumberStation(-1);
-        assertEquals(0, radio.getCurrentNumberStation());
-    }
-
-    @Test
-    void OverMaxVolume() {
-        radio.setCurrentVolume(101);
-        assertEquals(0, radio.getCurrentVolume());
-    }
-
-    @Test
-    void UnderMinVolume() {
-        radio.setCurrentVolume(-1);
         assertEquals(0, radio.getCurrentVolume());
     }
 }
