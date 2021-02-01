@@ -20,24 +20,24 @@ public class RadioAdvanced {
 
     public void nextNumberStation() {
         if (currentNumberStation == lastStation) {
-            setCurrentNumberStation(0);
+            currentNumberStation = startStation;
             return;
         }
         currentNumberStation++;
     }
 
-    public void prevNumberStation() {
+        public void prevNumberStation() {
         if (currentNumberStation == startStation) {
-            setCurrentNumberStation(10);
+            currentNumberStation = lastStation;
             return;
         }
         currentNumberStation--;
     }
     public RadioAdvanced(int currentVolume) {
-        if (currentVolume > 100) {
+        if (currentVolume > maxVolume) {
             return;
         }
-        if (currentVolume < 0) {
+        if (currentVolume < minVolume) {
             return;
         }
         this.currentVolume = currentVolume;
@@ -52,23 +52,23 @@ public class RadioAdvanced {
     }
 
     public void setCurrentNumberStation(int currentNumberStation) {
-        if (currentNumberStation > 10) {
+        if (currentNumberStation > lastStation) {
             return;
         }
-        if (currentNumberStation < 0) {
+        if (currentNumberStation < startStation) {
             return;
         }
         this.currentNumberStation = currentNumberStation;
     }
 
     public void plusVolume() {
-        if (currentVolume != 100) {
+        if (currentVolume != maxVolume) {
             currentVolume++;
         }
     }
 
     public void minusVolume() {
-        if (currentVolume != 0) {
+        if (currentVolume != minVolume) {
             currentVolume--;
         }
     }
