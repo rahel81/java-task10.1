@@ -8,7 +8,7 @@ class RadioAdvancedTest {
     RadioAdvanced radio = new RadioAdvanced();
 
     @Test
-    void CurrentNumberStation() {
+    void currentNumberStation() {
         radio.setCurrentNumberStation(7);
         assertEquals(7, radio.getCurrentNumberStation());
     }
@@ -28,21 +28,21 @@ class RadioAdvancedTest {
     }
 
     @Test
-    void LastStation() {
+    void lastStation() {
         radio.setCurrentNumberStation(10);
         radio.nextNumberStation();
         assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
-    void StartStation() {
+    void startStation() {
         radio.setCurrentNumberStation(0);
         radio.prevNumberStation();
         assertEquals(10, radio.getCurrentNumberStation());
     }
 
     @Test
-    void CurrentVolume() {
+    void currentVolume() {
         radio.setCurrentVolume(50);
         assertEquals(50, radio.getCurrentVolume());
     }
@@ -62,14 +62,14 @@ class RadioAdvancedTest {
     }
 
     @Test
-    void MaxVolume() {
+    void maxVolume() {
         radio.setCurrentVolume(100);
         radio.plusVolume();
         assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
-    void MinVolume() {
+    void minVolume() {
         radio.setCurrentVolume(0);
         radio.minusVolume();
         assertEquals(0, radio.getCurrentVolume());
