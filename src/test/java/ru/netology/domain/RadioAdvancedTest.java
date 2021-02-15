@@ -8,7 +8,7 @@ class RadioAdvancedTest {
     RadioAdvanced radio = new RadioAdvanced(10,0);
 
     @Test
-    void CurrentNumberStation() {
+    void currentNumberStation() {
         RadioAdvanced radio = new RadioAdvanced();
         radio.setCurrentNumberStation(7);
         assertEquals(7, radio.getCurrentNumberStation());
@@ -31,7 +31,7 @@ class RadioAdvancedTest {
     }
 
     @Test
-    void LastStation() {
+    void lastStation() {
         RadioAdvanced radio = new RadioAdvanced();
         radio.setCurrentNumberStation(10);
         radio.nextNumberStation();
@@ -39,7 +39,7 @@ class RadioAdvancedTest {
     }
 
     @Test
-    void StartStation() {
+    void startStation() {
         RadioAdvanced radio = new RadioAdvanced();
         radio.setCurrentNumberStation(0);
         radio.prevNumberStation();
@@ -47,20 +47,20 @@ class RadioAdvancedTest {
     }
 
     @Test
-    void CurrentVolume() {
+    void currentVolume() {
         RadioAdvanced radio = new RadioAdvanced(50);
         assertEquals(50, radio.getCurrentVolume());
     }
 
     @Test
-    void MaxVolume() {
+    void maxVolume() {
         RadioAdvanced radio = new RadioAdvanced(100);
         radio.plusVolume();
         assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
-    void MinVolume() {
+    void minVolume() {
         RadioAdvanced radio = new RadioAdvanced(0);
         radio.minusVolume();
         assertEquals(0, radio.getCurrentVolume());
@@ -81,27 +81,27 @@ class RadioAdvancedTest {
     }
 
     @Test
-    void NextNumberStationOverLast() {
+    void nextNumberStationOverLast() {
         RadioAdvanced radio = new RadioAdvanced();
         radio.setCurrentNumberStation(11);
         assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
-    void PrevNumberStationUnderStart() {
+    void prevNumberStationUnderStart() {
         RadioAdvanced radio = new RadioAdvanced();
         radio.setCurrentNumberStation(-1);
         assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
-    void OverMaxVolume() {
+    void overMaxVolume() {
         RadioAdvanced radio = new RadioAdvanced(101);
         assertEquals(0, radio.getCurrentVolume());
     }
 
     @Test
-    void UnderMinVolume() {
+    void underMinVolume() {
         RadioAdvanced radio = new RadioAdvanced(-1);
         assertEquals(0, radio.getCurrentVolume());
     }
