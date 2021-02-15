@@ -8,7 +8,7 @@ class RadioAdvancedTest {
     RadioAdvanced radio = new RadioAdvanced();
 
     @Test
-    void CurrentNumberStation() {
+    void currentNumberStation() {
         radio.setCurrentNumberStation(9);
         assertEquals(9, radio.getCurrentNumberStation());
     }
@@ -28,21 +28,21 @@ class RadioAdvancedTest {
     }
 
     @Test
-    void LastStation() {
+    void lastStation() {
         radio.setCurrentNumberStation(9);
         radio.nextNumberStation();
         assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
-    void StartStation() {
+    void startStation() {
         radio.setCurrentNumberStation(0);
         radio.prevNumberStation();
         assertEquals(9, radio.getCurrentNumberStation());
     }
 
     @Test
-    void CurrentVolume() {
+    void currentVolume() {
         radio.setCurrentVolume(5);
         assertEquals(5, radio.getCurrentVolume());
     }
@@ -62,39 +62,39 @@ class RadioAdvancedTest {
     }
 
     @Test
-    void MaxVolume() {
+    void maxVolume() {
         radio.setCurrentVolume(10);
         radio.plusVolume();
         assertEquals(10, radio.getCurrentVolume());
     }
 
     @Test
-    void MinVolume() {
+    void minVolume() {
         radio.setCurrentVolume(0);
         radio.minusVolume();
         assertEquals(0, radio.getCurrentVolume());
     }
 
     @Test
-    void NextNumberStationOverLast() {
+    void nextNumberStationOverLast() {
         radio.setCurrentNumberStation(11);
         assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
-    void PrevNumberStationUnderStart() {
+    void prevNumberStationUnderStart() {
         radio.setCurrentNumberStation(-1);
         assertEquals(0, radio.getCurrentNumberStation());
     }
 
     @Test
-    void OverMaxVolume() {
+    void overMaxVolume() {
         radio.setCurrentVolume(11);
         assertEquals(0, radio.getCurrentVolume());
     }
 
     @Test
-    void UnderMinVolume() {
+    void underMinVolume() {
         radio.setCurrentVolume(-1);
         assertEquals(0, radio.getCurrentVolume());
     }
